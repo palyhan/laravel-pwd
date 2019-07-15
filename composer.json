@@ -1,0 +1,34 @@
+{
+    "name": "yjtec/laravel-pwd",
+    "description": "laravel pwd",
+    "type": "library",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "kidkang",
+            "email": "723616880@qq.com"
+        }
+    ],
+    "autoload": {
+        "psr-4": {
+            "Yjtec\\Lpwd\\":"src/"
+        }
+    },    
+    "minimum-stability": "dev",
+    "require": {
+        "yjtec/pwd": "1.0.3"
+    },
+    "extra": {
+        "laravel": {
+            "providers": [
+                "Yjtec\\Lpwd\\PwdServiceProvider"
+            ],
+        }
+    },
+    "repositories": {
+        "packagist": {
+            "type": "composer",
+            "url": "https://mirrors.aliyun.com/composer/"
+        }
+    }    
+}
