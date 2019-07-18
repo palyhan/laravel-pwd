@@ -14,7 +14,7 @@
   },
   "minimum-stability": "dev",
   "require": {
-    "yjtec/pwd": "1.0.3"
+    "yjtec/pwd": "dev-master"
   },
   "extra": {
     "laravel": {
