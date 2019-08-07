@@ -14,8 +14,15 @@ class PwdValidator extends Validator
     public function validatePwd($attribute, $value, $parameters, $validator)
     {
         list($table, $user) = $parameters;
+
+        if(strpos($table, '.')){
+            list($con,$tab) = explode('.',$table);
+            $db = DB::connection($con)->table($tab);
+        }else{
+            $db = DB::table($table);
+        }
         $compireField       = isset($parameters[2]) && $parameters[2] ? $parameters[2] : 'password';
-        $re                 = DB::table($table)
+        $re                 = $db
             ->select(DB::raw("md5(concat('$value',salt)) as $attribute ,$compireField"))
             ->where($user, $this->getValue($user))
             ->first();
